@@ -1,6 +1,6 @@
 package com.zhukowez.homework2.util;
 
-import com.zhukowez.domain.Car;
+import com.zhukowez.homework2.domain.Car;
 import com.zhukowez.homework2.service.CarBrandInterface;
 import com.zhukowez.homework2.service.CarModelInterface;
 import com.zhukowez.homework2.service.CarTransmissionTypeInterface;

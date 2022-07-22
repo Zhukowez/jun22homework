@@ -1,4 +1,4 @@
-package com.zhukowez.domain;
+package com.zhukowez.homework2.domain;
 
 import com.zhukowez.homework2.service.CarActionInterface;
 
