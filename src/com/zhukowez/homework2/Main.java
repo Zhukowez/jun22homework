@@ -1,5 +1,6 @@
 package com.zhukowez.homework2;
 
+import com.zhukowez.domain.Car;
 import com.zhukowez.homework2.util.GenerateCarUtil;
 
 import java.util.Arrays;
@@ -32,4 +33,3 @@ public class Main {
     }
 
 }
-    

@@ -1,6 +1,6 @@
-package com.zhukowez.homework2;
+package com.zhukowez.domain;
 
-import com.zhukowez.homework2.servis.CarActionInterface;
+import com.zhukowez.homework2.service.CarActionInterface;
 
 import java.util.Objects;
 

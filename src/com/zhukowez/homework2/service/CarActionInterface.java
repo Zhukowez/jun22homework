@@ -1,4 +1,4 @@
-package com.zhukowez.homework2.servis;
+package com.zhukowez.homework2.service;
 
 public interface CarActionInterface {
 
