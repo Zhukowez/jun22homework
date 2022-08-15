@@ -11,7 +11,7 @@ public class Book {
     private String authorFirstName;
     private String authorPatronymic;
 
-    public Book(){
+    public Book() {
     }
 
     public Book(String bookName, String authorLastName, String authorFirstName, String authorPatronymic) {
@@ -76,8 +76,8 @@ public class Book {
                 '}';
     }
 
-    public static void printBookList(List<Book> books){
-        for (Book bookPrint : books){
+    public static void printBookList(List<Book> books) {
+        for (Book bookPrint : books) {
             System.out.print(
                     bookPrint.getBookName() + " " +
                             bookPrint.getAuthorLastName() + " " +
@@ -86,7 +86,7 @@ public class Book {
         }
     }
 
-    public static void printBookHashSetVowel(HashSet <Book> booksHashSet){
+    public static void printBookHashSetVowel(HashSet<Book> booksHashSet) {
         Iterator<Book> books = booksHashSet.iterator();
         while (books.hasNext()) {
             Book book = books.next();
@@ -100,13 +100,13 @@ public class Book {
         }
     }
 
-    private static boolean vowelSounds(String bookName){
+    private static boolean vowelSounds(String bookName) {
         String letter = String.valueOf(bookName.charAt(0));
         if (letter.equals("А") || letter.equals("Я") ||
-            letter.equals("О") || letter.equals("Е") ||
-            letter.equals("У") || letter.equals("Ю") ||
-            letter.equals("Ы") || letter.equals("И") ||
-            letter.equals("Э") || letter.equals("Ё")){
+                letter.equals("О") || letter.equals("Е") ||
+                letter.equals("У") || letter.equals("Ю") ||
+                letter.equals("Ы") || letter.equals("И") ||
+                letter.equals("Э") || letter.equals("Ё")) {
             return true;
         } else return false;
     }

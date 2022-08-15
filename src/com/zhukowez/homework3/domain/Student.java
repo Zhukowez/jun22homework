@@ -2,13 +2,13 @@ package homework3.domain;
 
 import java.util.Objects;
 
-public class Student implements Comparable{
+public class Student implements Comparable {
 
     public String studentFirstName;
     public String studentLastName;
 
 
-    public Student(){
+    public Student() {
     }
 
     public Student(String studentFirstName, String studentLastName) {

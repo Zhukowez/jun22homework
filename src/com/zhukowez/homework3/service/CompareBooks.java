@@ -5,7 +5,7 @@ import homework3.domain.Book;
 import java.util.Comparator;
 
 public enum CompareBooks implements Comparator<Book> {
-    AUTHOR_LAST_NAME{
+    AUTHOR_LAST_NAME {
         @Override
         public int compare(Book o1, Book o2) {
             return o1.getAuthorLastName().compareTo(o2.getAuthorLastName());
@@ -13,7 +13,7 @@ public enum CompareBooks implements Comparator<Book> {
     },
     AUTHOR_FIRST_NAME {
         @Override
-        public int compare(Book o1, Book o2){
+        public int compare(Book o1, Book o2) {
             return o1.getAuthorFirstName().compareTo(o2.getAuthorFirstName());
         }
     },

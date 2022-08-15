@@ -14,21 +14,21 @@ import static homework3.util.GeneratorObjectUtil.*;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        //Путь на файл с книгами
+        //The path to the book file
         Path readBookList = Paths.get("src\\homework3\\books.txt");
-        //Путь на файл с именами студентов
+        //Path to file with student first names
         Path readStudentFirstName = Paths.get("src\\homework3\\firstnamestudents.txt");
-        //Путь на файл с фамилиями студентов
+        //The path to the file with the lasts names of students
         Path readStudentLastName = Paths.get("src\\homework3\\lastnamestudents.txt");
         /*************************************************************************************************/
-        //Создание списка с книгами из файла
+        //Creating a list with books from a file
         List<String> linkedListForGenerate = Files.readAllLines(readBookList);
-        //Создание листа со всеми объектами книг
+        //Create a list with all book objects
         GeneratorObjectUtil.createBookList(linkedListForGenerate);
 
-        //Количество для генерации книг в LinkedList
+        //Number to generate books in LinkedList
         int numberBookGenerateForLinkedList = 20;
-        //Генерация книг
+        //Book Generation
         GeneratorObjectUtil.generateBookLinkedList(createBookLinkedList, numberBookGenerateForLinkedList);
 
         Book.printBookList(bookLinkedList);
@@ -36,7 +36,7 @@ public class Main {
         bookLinkedList.remove(6);
         Book.printBookList(bookLinkedList);
 
-        //Количество для генерации книг в HashSet
+        //Number to generate books in HashSet
         int numberBookGenerateForHashSet = 25;
         int numberRepeatBooks = 6;
         GeneratorObjectUtil.generateBookHashSet(createBookLinkedList, numberBookGenerateForHashSet, numberRepeatBooks);
@@ -59,7 +59,7 @@ public class Main {
         Book.printBookList(bookLinkedList);
         System.out.println("/////////////////////////////////////////////////////////////////////////////////////");
 
-        //Создание списка имен студентов из файла
+        //Create a list of student names from a file
         List<String> studentsFirstNameGenerate = Files.readAllLines(readStudentFirstName);
         List<String> studentsLastNameGenerate = Files.readAllLines(readStudentLastName);
 
@@ -71,33 +71,10 @@ public class Main {
         System.out.println("/////////////////////////////////////////////////////////////////////////////////////");
         int numberUsersGenerate = 1;
         int numberUserFriendsGenerate = 3;
-       // List<User> users = GeneratorObjectUtil.generateUsers(studentsFirstNameGenerate, studentsLastNameGenerate, numberUsersGenerate, numberUserFriendsGenerate);
-
 
         List<User> user = GeneratorObjectUtil.generateUsers(studentsFirstNameGenerate, studentsLastNameGenerate, numberUsersGenerate, numberUserFriendsGenerate);
 
-        GeneratorObjectUtil.printUsersAndFriend(user);
+        GeneratorObjectUtil.printUsersAndFriend(user, numberUserFriendsGenerate);
 
-
-        /*for (String bookGenerate : linkedListForGenerate){
-            String[] bookField = bookGenerate.split(";");
-            String bookName = bookField[0];
-            String authorFirstName = bookField[1];
-            String authorLastName = bookField[2];
-            String authorPatronymic = bookField[3];
-            Book book = new Book(bookName, authorFirstName, authorLastName, authorPatronymic);
-
-            bookLinkedList.add(book);
-        }*/
-
-        //System.out.println(linkedListForGenerate);
-
-       // System.out.println(generateBookLinkedList);
-
-
-
-
-
-       /**/
     }
 }

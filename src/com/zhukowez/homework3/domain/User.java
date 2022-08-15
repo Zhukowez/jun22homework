@@ -9,10 +9,10 @@ public class User {
     private String surname;
     private List<User> friends;
 
-    public User(){
+    public User() {
     }
 
-    public User(String name, List<User> friends){
+    public User(String name, List<User> friends) {
         this.name = name;
         this.friends = friends;
     }
@@ -69,7 +69,7 @@ public class User {
         return Objects.hash(id, name, surname, friends);
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
@@ -77,18 +77,7 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", friends=" + friends +
                 '}';
-    }*/
-
-/*    @Override
-    public String toString() {
-        return name;
-    }*/
-
-        @Override
-    public String toString() {
-        return "User{" +
-                ", name='" + name + '\'' +
-                ", friends=" + friends +
-                '}';
     }
+
+
 }

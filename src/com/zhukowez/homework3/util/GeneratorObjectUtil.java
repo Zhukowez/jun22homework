@@ -111,76 +111,41 @@ public class GeneratorObjectUtil {
     }
 
 
+    public static List<User> generateUsers(List<String> firstNameList, List<String> lastNameList, int numberUsersGenerate, int numberUserFriendsGenerate) {
+        long id = random.nextInt(firstNameList.size());
+        String userLastName = lastNameList.get(random.nextInt(lastNameList.size()));
 
-    public static List<User> generateUsers(List<String> firstNameList, List<String> lastNameList, int numberUsersGenerate, int numberUserFriendsGenerate){
-            long id = random.nextInt(firstNameList.size());
-            String userLastName = lastNameList.get(random.nextInt(lastNameList.size()));
+        String userFirstName = firstNameList.get(random.nextInt(firstNameList.size()));
 
-            String userFirstName = firstNameList.get(random.nextInt(firstNameList.size()));
+        List<User> userFriends = null;
+        User user = new User(id, userFirstName, userLastName, userFriends);
+        generateUsersAndFriends.add(user);
 
-            List<User> userFriends = null;
-            User user = new User(id, userFirstName, userLastName, userFriends);
-            generateUsersAndFriends.add(user);
-
-            for (int i = 0; i < 3; i++){
-            user.getFriends(generateFriends(firstNameList));
-            }
-
-        //  List<User> userFriends = generateFriends(firstNameList);
-
-
-        //generateFriends(user);
+        for (int i = 0; i < numberUsersGenerate; i++) {
+            user.getFriends(generateFriends(firstNameList, numberUserFriendsGenerate));
+        }
 
 
         return generateUsersAndFriends;
     }
-    /*public static List<User> generateUsers(List<String> firstNameList, List<String> lastNameList, int numberUsersGenerate, int numberUserFriendsGenerate){
-                int i = 0;
-                long id = random.nextInt(firstNameList.size());
-                String userLastName = lastNameList.get(random.nextInt(lastNameList.size()));
-                while (i < numberUsersGenerate) {
-                    i++;
-                    String userFirstName = firstNameList.get(random.nextInt(firstNameList.size()));
 
-                    List<User> userFriends = generateUsers(firstNameList, lastNameList, random.nextInt(numberUsersGenerate), random.nextInt(numberUserFriendsGenerate));
-                    User user = new User(id, userFirstName, userLastName, userFriends);
-                    generateUsersAndFriends.add(user);
-                }
-
-              //  List<User> userFriends = generateFriends(firstNameList);
-
-
-                //generateFriends(user);
-
-
-        return generateUsersAndFriends;
-    }*/
-
-    public static List<User> generateFriends(List<String> firstNameList) {
-        List<User> friends = null;
-        // random.nextInt(firstNameList.size());
+    public static List<User> generateFriends(List<String> firstNameList, int numberUserFriendsGenerate) {
         List<User> userFriends = null;
-        for (int i = 0; i < 3; i++) {
-            List<User> user = new LinkedList<>();
+        for (int i = 0; i < numberUserFriendsGenerate; i++) {
             String userFirstName = firstNameList.get(random.nextInt(firstNameList.size()));
-            userFriends = generateFriends(firstNameList);
+            userFriends = generateFriends(firstNameList, numberUserFriendsGenerate);
         }
         return userFriends;
     }
 
 
-    public static void printUsersAndFriend(List<User> user){
+    public static void printUsersAndFriend(List<User> user, int numberUserFriendsGenerate) {
         int i = 0;
-        while (i < 3){
+        while (i < numberUserFriendsGenerate) {
             System.out.println(user.get(i).getName() + "=>");
-            //printUsersAndFriend(user.get(i).getFriends(generateFriends(firstNameList.subList(i, i + 1))));
             i++;
         }
     }
-
-/*    public static void printFriends(User user){
-
-    }*/
 
 
 
